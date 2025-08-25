@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
+      integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css"
+      integrity="sha512-fw7f+TcMjTb7bpbLJZlP8g2Y4XcCyFZW8uy8HsRZsH/SwbMw0plKHFHr99DN3l04VsYNwvzicUX/6qurvIxbxw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .card {
+        padding: 20px;
+        width: 450px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border: none;
+        transition: all 0.4s ease;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+      }
+      .inputs {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .result {
+        transition: all 0.8s ease;
+        margin-top: 10px;
+
+        opacity: 0;
+      }
+      .result.show {
+        opacity: 1;
+        max-height: 200px; /* enough to fit content */
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="card">
+      <h2 class="fw-bold display-6">
+        <i class="bi bi-plus-circle-fill text-success fw-bold mx-2"></i>Number
+        Adder
+      </h2>
+      <div class="inputs my-4">
+        <input
+          type="number"
+          class="form-control"
+          placeholder="Enter number 1"
+        />
+        <i class="bi bi-plus text-success fw-bold display-6"></i>
+        <input
+          type="number"
+          class="form-control"
+          placeholder="Enter Number 2"
+        />
+      </div>
+      <button class="btn btn-outline-success my-3">Get Result</button>
+      <button class="btn btn-secondary">Reset</button>
+      <h5 class="result"></h5>
+    </div>
+
+    <script src="script.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/js/bootstrap.min.js"
+      integrity="sha512-zKeerWHHuP3ar7kX2WKBSENzb+GJytFSBL6HrR2nPSR1kOX1qjm+oHooQtbDpDBSITgyl7QXZApvDfDWvKjkUw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>

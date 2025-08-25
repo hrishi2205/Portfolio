@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+  background-color: red;
+}
+div {
+  color: white;
+  font-size: 100px;
+  letter-spacing: 3px;
+}
+
+@media (min-width: 576px) {
+  body {
+    background-color: blue;
+  }
+  div {
+    font-size: 60px;
+  }
+}
+@media (min-width: 992px) {
+  body {
+    background-color: orange;
+  }
+  div {
+    font-size: 120px;
+  }
+}
+@media (min-width: 1200px) {
+  body {
+    background-color: pink;
+  }
+  div {
+    font-size: 150px;
+  }
+}

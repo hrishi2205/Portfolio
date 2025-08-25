@@ -1,0 +1,31 @@
+.container {
+  background-color: #f0f0f0;
+  height: 100vh;
+  border: 2px solid #ccc;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.box {
+  height: 150px;
+  background-color: red;
+  margin: 10px;
+  color: white;
+}
+
+.box1 {
+  background-color: red;
+  align-self: flex-end;
+}
+.box2 {
+  background-color: green;
+  align-self: flex-start;
+}
+.box3 {
+  background-color: orange;
+  align-self: center;
+}
+.box4 {
+  background-color: olive;
+  align-self: flex-end;
+}
