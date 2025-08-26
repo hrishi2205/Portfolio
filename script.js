@@ -1,9 +1,22 @@
 const menuBtn = document.querySelector(".menu-btn");
 const navLinks = document.querySelector(".nav-links");
 
+// Toggle menu on hamburger click
 menuBtn.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
+
+// Close menu when clicking outside
+document.addEventListener("click", (e) => {
+  if (
+    !navLinks.contains(e.target) && // clicked outside nav links
+    !menuBtn.contains(e.target) && // clicked outside menu button
+    navLinks.classList.contains("active")
+  ) {
+    navLinks.classList.remove("active");
+  }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   new Typed("#typed-text", {
     strings: [
