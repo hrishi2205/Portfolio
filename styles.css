@@ -146,25 +146,34 @@ html {
   padding: 6rem 2rem;
   background: white;
 }
-.about-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  gap: 4rem;
-  align-items: center;
-}
 .profile-img {
   flex: 1;
   align-items: center;
 }
-.profile-img img {
-  max-width: 400px;
-  border-radius: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.about-content {
+  display: flex;
+  flex-wrap: wrap; /* allow stacking on mobile */
+  gap: 2rem;
+  align-items: center;
+  justify-content: center; /* center content */
 }
+
+/* Profile image */
+.profile-img img {
+  width: 100%;
+  max-width: 400px; /* limit size on desktop */
+  height: auto; /* maintain aspect ratio */
+  border-radius: 1rem;
+  display: block;
+  margin: 0 auto; /* center on mobile */
+}
+
+/* Text section */
 .about-text {
   flex: 1;
+  min-width: 250px; /* ensure text doesn't shrink too much */
 }
+
 .section-title {
   font-size: 2rem;
   margin-bottom: 1.5rem;
@@ -185,39 +194,58 @@ html {
 
 .skills-wrapper {
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* hide overflowing cards */
   padding: 2rem 0;
 }
 
+/* Horizontal moving grid */
 .skills-grid {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
+  flex-wrap: nowrap; /* single row, horizontal scroll effect */
   animation: scroll 25s linear infinite;
-  flex-wrap: nowrap;
 }
 
+/* Skill card */
 .skills-card {
-  flex: 0 0 auto;
-  min-width: 250px;
+  flex: 0 0 auto; /* prevent shrinking */
+  min-width: 180px; /* base width */
+  padding: 1rem;
   background: white;
-  padding: 2rem;
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.6s ease, box-shadow 0.6s ease;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Hover effect */
 .skills-card:hover {
-  transform: translateZ(30px) scale(1.05);
+  transform: translateZ(20px) scale(1.05);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* Icon inside card */
 .skills-card i {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: var(--primary-color);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
+
+/* Keyframes for horizontal scroll */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 .skills-content .section-title {
   font-size: 2rem;
   margin-bottom: 2rem; /* a bit more space from grid */
@@ -236,15 +264,6 @@ html {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
 }
 
 /* Fade effect at container ends */
@@ -275,21 +294,37 @@ html {
   );
 }
 
-.skills-grid > .skills-card:nth-child(n) {
-}
-
 /* Responsive */
 @media (max-width: 780px) {
   .skills-card {
-    min-width: 200px;
-    padding: 1.5rem;
+    width: 140px; /* square width */
+    aspect-ratio: 1/1; /* make it square */
+    padding: 0.5rem;
+    /* adjust padding */
+  }
+  .skills-grid {
+    animation: scroll 8s linear infinite;
+  }
+
+  .about-content {
+    flex-direction: column;
+
+    align-items: center;
+    gap: 1.5rem; /* smaller vertical gap */
+  }
+  .profile-img img {
+    max-width: 90%; /* fit nicely within viewport */
   }
 }
 
 @media (max-width: 480px) {
-  .skills-card {
-    min-width: 180px;
-    padding: 1rem;
+  skills-card {
+    width: 120px;
+    aspect-ratio: 1/1;
+    padding: 0.6rem;
+  }
+  .skills-grid {
+    animation: scroll 8s linear infinite;
   }
 }
 
