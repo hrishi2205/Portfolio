@@ -477,8 +477,15 @@ html {
   .header-text h1 {
     font-size: 2.5rem;
   }
+  .skills-grid {
+    flex-wrap: wrap; /* ✅ allow cards to stack */
+    justify-content: center;
+  }
+
   .skills-card {
-    min-width: 200px;
+    flex: 1 1 45%; /* ✅ two per row */
+    min-width: 150px; /* prevent too small */
+    max-width: 250px;
   }
   .contact {
     padding: 4rem 1rem;
@@ -516,6 +523,11 @@ html {
   .form-group {
     margin-bottom: 1rem;
   }
+  .skills-card {
+    flex: 1 1 100%; /* ✅ full width */
+    max-width: 100%;
+  }
+
   .form-group label {
     font-size: 0.9rem;
   }
