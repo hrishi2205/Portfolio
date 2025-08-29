@@ -26,7 +26,9 @@
     <!-- navbar -->
     <nav class="navbar">
       <div class="nav-content">
-        <div class="logo"><i class="fas fa-code"></i></div>
+        <div class="logo" onclick="goto:index.html">
+          <i class="fas fa-code"></i>
+        </div>
         <div class="nav-links">
           <a href="#home"><i class="fas fa-home"></i> Home</a>
           <a href="#about"><i class="fas fa-user"></i> About</a>
@@ -46,7 +48,11 @@
         <div class="header-text">
           <h1><span id="typed-text"></span></h1>
           <p>Building modern web experiences with style and performance.</p>
-          <a href="#contact" class="cta-btn">Get In Touch</a>
+          <div class="cta-container">
+            <a href="#contact" class="cta-btn" id="cta-btn"
+              ><span>Get In Touch</span></a
+            >
+          </div>
         </div>
       </div>
     </header>
@@ -222,18 +228,21 @@
       <div class="contact-content">
         <h3 class="section-title">Get in Touch</h3>
         <form class="contact-form">
-          <div class="form-group">
+          <div class="inputGroup">
+            <input type="text" id="name" name="name" required />
             <label for="name">Name</label>
-            <input type="text" id="name" />
           </div>
-          <div class="form-group">
+
+          <div class="inputGroup">
+            <input type="email" id="email" name="email" required />
             <label for="email">Email</label>
-            <input type="text" id="email" />
           </div>
-          <div class="form-group">
+
+          <div class="inputGroup">
+            <textarea id="message" name="message" rows="5" required></textarea>
             <label for="message">Message</label>
-            <textarea rows="5" id="message"></textarea>
           </div>
+
           <button class="submit-btn">Send Message</button>
         </form>
       </div>
