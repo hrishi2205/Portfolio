@@ -17,6 +17,7 @@ document.addEventListener("click", (e) => {
   }
 });
 
+// Typed.js animation
 document.addEventListener("DOMContentLoaded", function () {
   new Typed("#typed-text", {
     strings: [
@@ -30,4 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
     backDelay: 1500, // pause before backspacing
     loop: true, // keep repeating
   });
+
+  // Clone skill cards once → seamless infinite marquee
+  const marquee = document.querySelector(".skills-marquee");
+  if (marquee) {
+    marquee.innerHTML += marquee.innerHTML;
+  }
 });

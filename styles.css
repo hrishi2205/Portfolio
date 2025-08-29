@@ -194,8 +194,17 @@ html {
 
 .skills-wrapper {
   position: relative;
-  overflow: hidden; /* hide overflowing cards */
+  overflow: hidden;
   padding: 2rem 0;
+  width: 100%;
+}
+.skills-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+.skills-marquee:hover {
+  animation-play-state: paused; /* pause on hover */
 }
 
 /* Horizontal moving grid */
@@ -208,19 +217,15 @@ html {
 
 /* Skill card */
 .skills-card {
-  flex: 0 0 auto; /* prevent shrinking */
-  min-width: 180px; /* base width */
+  flex: 0 0 auto;
+  min-width: 180px;
+  margin-right: 1rem;
   padding: 1rem;
   background: white;
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: transform 0.6s ease, box-shadow 0.6s ease;
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 /* Hover effect */
@@ -237,7 +242,7 @@ html {
 }
 
 /* Keyframes for horizontal scroll */
-@keyframes scroll {
+@keyframes marquee {
   0% {
     transform: translateX(0);
   }
