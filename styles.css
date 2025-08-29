@@ -523,9 +523,15 @@ html {
   .form-group {
     margin-bottom: 1rem;
   }
+  .skills-grid {
+    flex-wrap: wrap; /* ✅ allow cards to stack */
+    justify-content: center;
+  }
+
   .skills-card {
-    flex: 1 1 100%; /* ✅ full width */
-    max-width: 100%;
+    flex: 1 1 45%; /* ✅ two per row */
+    min-width: 150px; /* prevent too small */
+    max-width: 200px;
   }
 
   .form-group label {
