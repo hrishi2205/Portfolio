@@ -159,12 +159,12 @@ html {
   align-items: center;
   padding: 0 2rem;
   background: linear-gradient(
-       144deg,
-       rgba(175, 64, 255, 0.9),
-       rgba(91, 66, 243, 0.9) 50%,
-       rgba(0, 221, 235, 0.9) 100%
-     ),
-     url("https://media.istockphoto.com/id/1515913422/photo/a-data-analyst-using-technology-ai-for-working-tool-for-data-analysis-chatbot-chat-with-ai.jpg?b=1&s=612x612&w=0&k=20&c=I8aXnwy7BCFAJ3Iw4bzRnRLtiIa-OPgLakMcVl9g9co=");
+      144deg,
+      rgba(175, 64, 255, 0.9),
+      rgba(91, 66, 243, 0.9) 50%,
+      rgba(0, 221, 235, 0.9) 100%
+    ),
+    url("https://media.istockphoto.com/id/1515913422/photo/a-data-analyst-using-technology-ai-for-working-tool-for-data-analysis-chatbot-chat-with-ai.jpg?b=1&s=612x612&w=0&k=20&c=I8aXnwy7BCFAJ3Iw4bzRnRLtiIa-OPgLakMcVl9g9co=");
   background-size: cover;
   background-position: center;
   color: white;
@@ -456,6 +456,7 @@ html {
 
 .skills-marquee {
   display: flex;
+  gap: 30px;
   width: max-content;
   animation: marquee 25s linear infinite;
 }
@@ -473,7 +474,6 @@ html {
 .skills-card {
   flex: 0 0 auto;
   min-width: 200px;
-  margin-right: 1rem;
   padding: 2rem 1.5rem;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 16px;
@@ -695,6 +695,14 @@ html {
 .work-card .work-links a:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-medium);
+}
+@media (hover: hover) and (pointer: fine) {
+  .work-card:hover img {
+    transform: scale(1.1);
+  }
+  .work-card:hover .overlay {
+    opacity: 1;
+  }
 }
 
 /* Enhanced Contact Section */
@@ -986,6 +994,20 @@ html {
     gap: 1rem;
   }
 }
+@media (max-width: 780px) {
+  .work-card .overlay {
+    opacity: 1 !important;
+    position: relative !important;
+    height: auto;
+    background: #fff;
+    padding: 1.5rem;
+  }
+
+  .work-card img {
+    height: auto; /* let image adjust naturally */
+    border-radius: 16px 16px 0 0;
+  }
+}
 
 /* Loading Animation */
 @keyframes shimmer {
@@ -1036,4 +1058,3 @@ html {
     transition-duration: 0.01ms !important;
   }
 }
-
