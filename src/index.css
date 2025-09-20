@@ -1,0 +1,107 @@
+@font-face {
+  font-family: "BodyFont";
+  src: url("/fonts/meriva.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "BodyFont";
+  src: url("/fonts/meriva.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@import "tailwindcss";
+
+/* Hard global base colors to avoid any white background */
+html,
+body,
+#root {
+  background-color: #0b0b0b !important; /* restore dark base */
+  color: #e5e7eb !important; /* gray-200 */
+  min-height: 100%;
+}
+body {
+  margin: 0;
+}
+
+/* src/index.css */
+@layer base {
+  html,
+  body,
+  #root {
+    background-color: #111111;
+    color: #e5e7eb; /* tailwind gray-200 */
+    min-height: 100%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark; /* encourage dark form controls */
+  }
+
+  body {
+    font-family: "BodyFont", sans-serif;
+  }
+}
+
+@layer components {
+  .section-title {
+    font-size: 1.875rem; /* text-3xl */
+    line-height: 2.25rem;
+    font-weight: 700; /* font-bold */
+    text-align: center; /* text-center */
+    margin-bottom: 3rem; /* mb-12 */
+    color: #ffffff; /* text-white */
+    letter-spacing: -0.02em; /* tracking-tighter */
+  }
+  @media (min-width: 768px) {
+    /* md breakpoint */
+    .section-title {
+      font-size: 2.25rem; /* text-4xl */
+      line-height: 2.5rem;
+    }
+  }
+}
+
+@keyframes bounceArrow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounceArrow {
+  animation: bounceArrow 1s infinite;
+}
+
+/* Meteor effect for Hero Section */
+.meteor {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 2px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 2px #0ea5e9; /* sky-500 */
+  animation: meteor-fall linear infinite;
+  opacity: 0;
+}
+
+@keyframes meteor-fall {
+  0% {
+    transform: translate(0, -200px);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-300px, 800px);
+    opacity: 0;
+  }
+}
